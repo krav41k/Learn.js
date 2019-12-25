@@ -1,0 +1,4 @@
+Точка возвращает специальгон значение ссылочного типа Reference Type. Используеться для передачи информации вида (base, name, true) от . до ().
+
+Object.getOwnPropertySymbols для перебора ключей типа Симбол
+Reflect.ownKeys(obj) - вернуть ключи

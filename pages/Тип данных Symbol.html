@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)http://learn.javascript.ru/symbol -->
+<html lang="ru" class="working-hover"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" async="" src="./Тип данных Symbol_files/js"></script><script>window.currentUser = null;</script><script>window.rateUsdToNative = 64.2959;</script><title itemprop="name">Тип данных Symbol</title><link href="./Тип данных Symbol_files/styles.5bdb21be8f25d45650c2.css" rel="stylesheet"><meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><!-- chrome autotranslate is enabled only for "en" main version--><meta name="google" content="notranslate"><script>if (window.devicePixelRatio > 1) document.cookie = 'pixelRatio=' + window.devicePixelRatio + ';path=/;expires=Tue, 19 Jan 2038 03:14:07 GMT';</script><link href="./Тип данных Symbol_files/css" rel="stylesheet"><link rel="apple-touch-icon-precomposed" href="http://learn.javascript.ru/img/favicon/apple-touch-icon-precomposed.png"><link rel="canonical" href="https://learn.javascript.ru/symbol"><meta name="msapplication-TileColor" content="#222A2C"><meta name="msapplication-TileImage" content="/img/favicon/tileicon.png"><link rel="icon" href="http://learn.javascript.ru/img/favicon/favicon.png"><meta itemprop="image" content="https://learn.javascript.ru/img/site_preview_ru_512x512.png"><meta property="og:title" content="Тип данных Symbol"><meta property="og:image" content="https://learn.javascript.ru/img/site_preview_ru_1200x630.png"><meta property="og:image:type" content="image/png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="fb:admins" content="100001562528165"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Тип данных Symbol"><meta name="twitter:site" content="@iliakan"><meta name="twitter:creator" content="@iliakan"><meta name="twitter:image" content="https://learn.javascript.ru/img/site_preview_ru_512x512.png"><link rel="prev" href="http://learn.javascript.ru/garbage-collection"><link rel="next" href="http://learn.javascript.ru/object-methods"><script>window.GA_ID = "UA-2056213-16";</script><script>window.GTM_ID = 'GTM-WD2DZPG'</script><script>window.YANDEX_METRIKA_ID = 17649010;</script><script>window.GoogleAnalyticsObject="ga",window.ga=function(){window.ga.q.push(arguments)},window.ga.q=[],window.ga.l=Date.now(),ga("create",GA_ID,"auto"),window.GTM_ID&&ga("require",GTM_ID),window.currentUser?ga("set","&uid",currentUser.id):ga("set","anonymizeIp",!0),window.addEventListener("error",function(e){var r=(e.filename||e.errorUrl)+": "+(e.lineno||e.errorLine),n=e.stack||e.error&&e.error.stack;ga("send","exception",{exDescription:e.message+" "+r+" "+n,exFatal:!0})});</script><script src="./Тип данных Symbol_files/analytics.js.Без названия" async=""></script><script>ga('send', 'pageview');</script><script>window.metrika={reachGoal:function(){}},window.yandex_metrika_callbacks=[function(){try{window.metrika=new Ya.Metrika({id:YANDEX_METRIKA_ID,webvisor:!0,clickmap:!0,params:{user:window.currentUser&&window.currentUser.id}}),metrika.trackLinks({delay:150}),window.addEventListener("error",function(r){window.metrika.reachGoal("JSERROR",{src:(r.filename||r.errorUrl)+": "+(r.lineno||r.errorLine),stack:r.stack||r.error&&r.error.stack,message:r.message})})}catch(r){}}];</script><script src="./Тип данных Symbol_files/watch.js.Без названия" async=""></script><script>window.RECAPTCHA_ID = "6Lf9NyETAAAAACZlg-a9Us2SxvYbeVC1ROWaWv4O";</script><script src="./Тип данных Symbol_files/init.5bdb21be8f25d45650c2.js.Без названия"></script><script src="./Тип данных Symbol_files/head.5bdb21be8f25d45650c2.js.Без названия" defer=""></script><meta property="og:title" content="Тип данных Symbol"><meta property="og:type" content="article"><script src="./Тип данных Symbol_files/tutorial.5bdb21be8f25d45650c2.js.Без названия" defer="" data-manual="1"></script><script src="./Тип данных Symbol_files/footer.5bdb21be8f25d45650c2.js.Без названия" defer=""></script></head><body class=""><script>window.fontTest();</script><span class="font-test" style=""></span><div class="page-wrapper page-wrapper_sidebar_on"><!--[if lt IE 10]><div style="color:red;text-align:center">Извините, IE&lt;10 не поддерживается, пожалуйста используйте более новый браузер.</div><![endif]--><div class="sitetoolbar sitetoolbar_tutorial"><script>window.langs = [{"code":"am","name":"Armenian"},{"code":"ar","name":"Arabic"},{"code":"az","name":"Azerbaijani"},{"code":"bg","name":"Bulgarian"},{"code":"bn","name":"Bengali"},{"code":"ca","name":"Catalan"},{"code":"el","name":"Greek"},{"code":"en","name":"English"},{"code":"es","name":"Spanish"},{"code":"fa","name":"Persian (Farsi)"},{"code":"fr","name":"French"},{"code":"hi","name":"Hindi"},{"code":"hu","name":"Hungarian"},{"code":"id","name":"Indonesian"},{"code":"it","name":"Italian"},{"code":"ja","name":"Japanese"},{"code":"ka","name":"Georgian"},{"code":"km","name":"Central Khmer"},{"code":"ko","name":"Korean"},{"code":"me","name":"Montenegrin"},{"code":"no","name":"Norvegian"},{"code":"pl","name":"Polish"},{"code":"pt","name":"Portuguese"},{"code":"ro","name":"Romanian"},{"code":"ru","name":"Russian"},{"code":"si","name":"Sinhala"},{"code":"ta","name":"Tamil"},{"code":"test","name":"Test"},{"code":"th","name":"Thai"},{"code":"tr","name":"Turkish"},{"code":"uk","name":"Ukrainian"},{"code":"uz","name":"Uzbek"},{"code":"vi","name":"Vietnamese"},{"code":"zh-hant","name":"Chinese Traditional"},{"code":"zh","name":"Chinese"}];</script><script>window.lang = "ru";</script><script>{let t=navigator.languages||[];t=t.map(t=>t.toLowerCase());let a,i,o=[];for(let a of window.langs)for(let i of t)if(i===a.code||i.startsWith(a.code+"-")){o.push(a);break}if("en"===lang){let t=o.find(t=>"en"!=t.code);t&&"ru"!=t.code&&(a=`\n        According to your browser language headers, you know ${t.name}. Please help to <a href="https://github.com/javascript-tutorial/${t.code}.javascript.info#readme">translate the tutorial</a> into your language!\n        Thank you!\n      `,i="notify-translate-tutorial")}else if("ru"===lang)i="notify-ru-tutorial",a='\n      Новая редакция учебника была недавно переведена с английского.<br>Если что-то не так - пожалуйста, поправьте в <a href="https://github.com/javascript-tutorial/ru.javascript.info">PR на GitHub</a> (ссылка на редактирование слева в сайдбаре статьи).\n      Спасибо!\n    ';else if("tr"==lang)a='The Turkish version is only half-translated yet! Please help us with its translation at <a href="https://github.com/javascript-tutorial/tr.javascript.info">GitHub</a>.',i="notify-tr-tutorial";else{o.find(t=>"en"==t.code)&&(a=`\n        It seems, you know English. Please help to <a href="https://github.com/javascript-tutorial/${lang}.javascript.info#readme">translate the tutorial</a>.\n        Thank you!\n      `,i="notify-translate-tutorial-local")}if(a){let t=`<div class="notification notification_top notification_info sitetoolbar__notification" style="display:none" id="${i}">\n      <div class="notification__content">${a}</div>\n      <button class="notification__close" title="Close"></button>\n    </div>`;document.write(t),showTopNotification()}}</script><div class="notification notification_top notification_info sitetoolbar__notification" style="" id="notify-ru-tutorial">
+      <div class="notification__content">
+      Новая редакция учебника была недавно переведена с английского.<br>Если что-то не так - пожалуйста, поправьте в <a href="https://github.com/javascript-tutorial/ru.javascript.info">PR на GitHub</a> (ссылка на редактирование слева в сайдбаре статьи).
+      Спасибо!
+    </div>
+      <button class="notification__close" title="Close"></button>
+    </div><div class="sitetoolbar__content"><div class="sitetoolbar__lang-switcher"><button class="sitetoolbar__dropdown-button" data-dropdown-toggler="">RU</button><div class="sitetoolbar__dropdown-wrap"><div class="sitetoolbar__dropdown-body"><div class="sitetoolbar__lang-switcher-body"><div class="supported-langs supported-langs_toolbar"><div class="supported-langs__container"><ul class="supported-langs__list" style="height:164px"><li class="supported-langs__item"><a class="supported-langs__link" href="https://javascript.info/symbol"><span class="supported-langs__brief">EN</span><span class="supported-langs__title">English</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://ja.javascript.info/symbol"><span class="supported-langs__brief">JA</span><span class="supported-langs__title">日本語</span></a></li><li class="supported-langs__item supported-langs__item_current"><a class="supported-langs__link" href="https://learn.javascript.ru/symbol"><span class="supported-langs__brief">RU</span><span class="supported-langs__title">Русский</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://tr.javascript.info/symbol"><span class="supported-langs__brief">TR</span><span class="supported-langs__title">Türkçe</span></a></li><li class="supported-langs__item"><a class="supported-langs__link" href="https://zh.javascript.info/symbol"><span class="supported-langs__brief">ZH</span><span class="supported-langs__title">简体中文</span></a></li></ul></div><div class="supported-langs__text">Мы хотим сделать этот проект с открытым исходным кодом доступным для людей во всем мире. Пожалуйста, <a href="https://github.com/javascript-tutorial/translate" rel="noopener noreferrer" target="_blank">помогите нам перевести</a> это руководство на свой язык</div></div></div></div></div></div><div class="sitetoolbar__logo-wrap"><a class="sitetoolbar__link sitetoolbar__link_logo" href="http://learn.javascript.ru/"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_normal" data="./Тип данных Symbol_files/sitetoolbar__logo_ru.svg" style="left: 0px; top: 0px; position: absolute;"></object><img class="sitetoolbar__logo sitetoolbar__logo_normal" src="./Тип данных Symbol_files/sitetoolbar__logo_ru.svg" width="171" alt="" role="presentation"><object type="image/svg+xml" class="sitetoolbar__logo sitetoolbar__logo_small" data="./Тип данных Symbol_files/sitetoolbar__logo_small_ru.svg" style="left: 0px; top: 0px; position: absolute;"></object><img class="sitetoolbar__logo sitetoolbar__logo_small" src="./Тип данных Symbol_files/sitetoolbar__logo_small_ru.svg" width="80" alt="" role="presentation" style="visibility: hidden;"><script>Array.prototype.forEach.call(document.querySelectorAll("img.sitetoolbar__logo"),function(e){let t=document.createElement("object");t.type="image/svg+xml",t.className=e.className,t.style.cssText="left:0;top:0;position:absolute",t.onload=function(){t.onload=null,e.style.visibility="hidden"},t.data=e.src,e.parentNode.insertBefore(t,e)});</script></a></div><div class="sitetoolbar__nav-toggle-wrap"><button class="sitetoolbar__nav-toggle" type="button"></button></div><nav class="sitetoolbar__sections"><ul class="sitetoolbar__sections-list"><li class="sitetoolbar__section sitetoolbar__section_current"><a class="sitetoolbar__link" href="http://learn.javascript.ru/">Учебник</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="http://learn.javascript.ru/courses">Курсы</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://javascript.ru/forum/">Форум</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="https://es5.javascript.ru/">ES5</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="http://learn.javascript.ru/quiz">Тесты знаний</a></li><li class="sitetoolbar__section"><a class="sitetoolbar__link" href="http://learn.javascript.ru/jobs">Стажировки</a></li><li class="sitetoolbar__section sitetoolbar__section_dropdown"><button class="sitetoolbar__dropdown-button" data-dropdown-toggler="">Скринкасты</button><div class="sitetoolbar__dropdown-wrap"><div class="sitetoolbar__dropdown-body"><ul class="sitetoolbar__dropdown-items"><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="http://learn.javascript.ru/screencast/nodejs">Node.js</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="http://learn.javascript.ru/screencast/webpack">Webpack</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="http://learn.javascript.ru/screencast/gulp">Gulp 4</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="http://learn.javascript.ru/screencast/react">React.js</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="http://learn.javascript.ru/screencast/angular">Angular</a></li><li class="sitetoolbar__dropdown-item"><a class="sitetoolbar__secondary-link sitetoolbar__dropdown-link" href="http://learn.javascript.ru/screencast/git">Git</a></li></ul></div></div></li></ul></nav><div class="sitetoolbar__book-wrap"><a class="buy-book-button" href="http://learn.javascript.ru/ebook"><span class="buy-book-button__extra-text">Купить</span>EPUB/PDF</a></div><div class="sitetoolbar__login-wrap"><button class="sitetoolbar__login" data-action-login=""></button></div><div class="sitetoolbar__search-wrap"><div class="sitetoolbar__search-content"><form class="sitetoolbar__search" method="GET" action="http://learn.javascript.ru/search"><button class="sitetoolbar__search-toggle" type="button"></button><div class="sitetoolbar__search-input"><div class="text-input"><input class="text-input__control" name="query" placeholder="Искать на Javascript.ru" required="required" type="text"></div><button class="sitetoolbar__find" type="submit">Найти</button></div></form></div></div></div><div class="tablet-menu"><div class="tablet-menu__line"><div class="tablet-menu__content"><select class="tablet-menu__nav input-select input-select input-select_small" onchange="if(this.value) window.location.href=this.value"><option value="/" selected="">Учебник</option><option value="/courses">Курсы</option><option value="https://javascript.ru/forum/">Форум</option><option value="https://es5.javascript.ru">ES5</option><option value="/quiz">Тесты знаний</option><option value="/jobs">Стажировки</option></select></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><form class="tablet-menu-search" action="http://learn.javascript.ru/search/"><input class="tablet-menu-search__input" type="search" name="query" placeholder="Поиск в учебнике" required="required"><button class="tablet-menu-search__button" type="submit" name="type" value="articles">Поиск</button></form></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><a class="map" href="http://learn.javascript.ru/tutorial/map" data-action="tutorial-map"><span class="map__text">Карта учебника</span></a></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><div class="share-icons"><span class="share-icons__title">Поделиться</span><a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fsymbol" rel="nofollow"></a><a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fsymbol" rel="nofollow"></a><a class="share share_vk" href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fsymbol" rel="nofollow"></a></div></div></div><div class="tablet-menu__line"><div class="tablet-menu__content"><select class="tablet-menu__nav input-select input-select input-select_small" onchange="if(this.value) window.location.href=this.value"><option value="https://javascript.info/symbol">English</option><option value="https://ja.javascript.info/symbol">日本語</option><option value="https://learn.javascript.ru/symbol" selected="">Русский</option><option value="https://tr.javascript.info/symbol">Türkçe</option><option value="https://zh.javascript.info/symbol">简体中文</option></select></div></div></div><div style="width: 1040px; margin: 0px; position: static; height: 4px;"></div></div><div class="page page_sidebar_on page_inner_padding page_sidebar-animation-on"><script>if(localStorage.noSidebar){document.querySelector(".page").classList.remove("page_sidebar_on");var pageWrapper=document.querySelector(".page-wrapper");pageWrapper&&pageWrapper.classList.remove("page-wrapper_sidebar_on")}setTimeout(function(){document.querySelector(".page").classList.add("page_sidebar-animation-on")},0);</script><div class="page__inner"><main class="main main_width-limit"><header class="main__header"><div class="main__header-inner"><div class="main__header-group"><ol class="breadcrumbs"><li class="breadcrumbs__item breadcrumbs__item_home" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="breadcrumb-1"><a class="breadcrumbs__link" href="http://learn.javascript.ru/" itemprop="url"><span class="breadcrumbs__hidden-text" itemprop="title">Учебник</span></a></li><li class="breadcrumbs__item" id="breadcrumb-1" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemref="breadcrumb-2" itemprop="child"><a class="breadcrumbs__link" href="http://learn.javascript.ru/js" itemprop="url"><span itemprop="title">Язык программирования JavaScript</span></a></li><li class="breadcrumbs__item" id="breadcrumb-2" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb" itemprop="child"><a class="breadcrumbs__link" href="http://learn.javascript.ru/object-basics" itemprop="url"><span itemprop="title">Объекты: основы</span></a></li></ol><div class="updated-at" data-tooltip="Последнее обновление: 31-го августа 2019"><div class="updated-at__content">31-го августа 2019</div></div></div><h1 class="main__header-title">Тип данных Symbol</h1></div></header><div class="content"><article class="formatted" itemscope="" itemtype="http://schema.org/TechArticle"><meta itemprop="name" content="Тип данных Symbol"><div itemprop="author" itemscope="" itemtype="http://schema.org/Person"><meta itemprop="email" content="iliakan@gmail.com"><meta itemprop="name" content="Ilya Kantor"></div><div itemprop="articleBody"><p>По спецификации, в качестве ключей для свойств объекта могут использоваться только строки или символы. Ни числа, ни логические значения не подходят, разрешены только эти два типа данных.</p>
+<p>До сих пор мы видели только строки. Теперь давайте разберём символы, увидим, что хорошего они нам дают.</p>
+<h2><a class="main__anchor" name="simvoly" href="http://learn.javascript.ru/symbol#simvoly">Символы</a></h2><p>«Символ» представляет собой уникальный идентификатор.</p>
+<p>Создаются новые символы с помощью функции <code>Symbol()</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token comment">// Создаём новый символ - id</code>
+<code class="token keyword">let</code> id <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>При создании символу можно дать описание (также называемое имя), в основном использующееся для отладки кода:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token comment">// Создаём символ id с описанием (именем) "id"</code>
+<code class="token keyword">let</code> id <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Символы гарантированно уникальны. Даже если мы создадим множество символов с одинаковым описанием, это всё равно будут разные символы. Описание – это просто метка, которая ни на что не влияет.</p>
+<p>Например, вот два символа с одинаковым описанием – но они не равны:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="3">
+
+
+<code class="mask">
+</code></code><code class=" language-javascript"><code class="token keyword">let</code> id1 <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token keyword">let</code> id2 <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code>id1 <code class="token operator">==</code> id2<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Если вы знаете Ruby или какой-то другой язык программирования, в котором есть своего рода «символы» – пожалуйста, будьте внимательны. Символы в JavaScript имеют свои особенности, и не стоит думать о них, как о символах в Ruby или в других языках.</p>
+<div class="important important_warn">
+            <div class="important__header"><span class="important__type">Символы не преобразуются автоматически в строки</span></div>
+            <div class="important__content"><p>Большинство типов данных в JavaScript могут быть неявно преобразованы в строку. Например, функция <code>alert</code> принимает практически любое значение, автоматически преобразовывает его в строку, а затем выводит это значение, не сообщая об ошибке. Символы же особенные и не преобразуются автоматически.</p>
+<p>К примеру, <code>alert</code> ниже выдаст ошибку:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="1">
+<code class="mask">
+</code></code><code class=" language-javascript"><code class="token keyword">let</code> id <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token function">alert</code><code class="token punctuation">(</code>id<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// TypeError: Cannot convert a Symbol value to a string</code></code><span class="line-numbers-rows"><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Это – языковая «защита» от путаницы, ведь строки и символы – принципиально разные типы данных и не должны неконтролируемо преобразовываться друг в друга.</p>
+<p>Если же мы действительно хотим вывести символ с помощью <code>alert</code>, то необходимо явно преобразовать его с помощью метода <code>.toString()</code>, вот так:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="1">
+<code class="mask">
+</code></code><code class=" language-javascript"><code class="token keyword">let</code> id <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token function">alert</code><code class="token punctuation">(</code>id<code class="token punctuation">.</code><code class="token function">toString</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Symbol(id), теперь работает</code></code><span class="line-numbers-rows"><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Или мы можем обратиться к свойству <code>symbol.description</code>, чтобы вывести только описание:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;end&quot;:1}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="1">
+<code class="mask">
+</code></code><code class=" language-javascript"><code class="token keyword">let</code> id <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token function">alert</code><code class="token punctuation">(</code>id<code class="token punctuation">.</code>description<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// id</code></code><span class="line-numbers-rows"><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></div></div>
+<h2><a class="main__anchor" name="skrytye-svoystva" href="http://learn.javascript.ru/symbol#skrytye-svoystva">«Скрытые» свойства</a></h2><p>Символы позволяют создавать «скрытые» свойства объектов, к которым нельзя нечаянно обратиться и перезаписать их из других частей программы.</p>
+<p>Например, мы работаем с объектами <code>user</code>, которые принадлежат стороннему коду. Мы хотим добавить к ним идентификаторы.</p>
+<p>Используем для этого символьный ключ:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">let</code> user <code class="token operator">=</code> <code class="token punctuation">{</code>
+  name<code class="token punctuation">:</code> <code class="token string">"Вася"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token keyword">let</code> id <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+user<code class="token punctuation">[</code>id<code class="token punctuation">]</code> <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> user<code class="token punctuation">[</code>id<code class="token punctuation">]</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// мы можем получить доступ к данным по ключу-символу</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Почему же лучше использовать <code>Symbol("id")</code>, а не строку <code>"id"</code>?</p>
+<p>Так как объект <code>user</code> принадлежит стороннему коду, и этот код также работает с ним, то нам не следует добавлять к нему какие-либо поля. Это небезопасно. Но к символу сложно нечаянно обратиться, сторонний код вряд ли его вообще увидит, и, скорее всего, добавление поля к объекту не вызовет никаких проблем.</p>
+<p>Кроме того, предположим, что другой скрипт для каких-то своих целей хочет записать собственный идентификатор в объект <code>user</code>. Этот скрипт может быть какой-то JavaScript-библиотекой, абсолютно не связанной с нашим скриптом.</p>
+<p>Сторонний код может создать для этого свой символ <code>Symbol("id")</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token comment">// ...</code>
+<code class="token keyword">let</code> id <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+user<code class="token punctuation">[</code>id<code class="token punctuation">]</code> <code class="token operator">=</code> <code class="token string">"Их идентификатор"</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Конфликта между их и нашим идентификатором не будет, так как символы всегда уникальны, даже если их имена совпадают.</p>
+<p>А вот если бы мы использовали строку <code>"id"</code> вместо символа, то тогда <em>был бы</em> конфликт:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">let</code> user <code class="token operator">=</code> <code class="token punctuation">{</code> name<code class="token punctuation">:</code> <code class="token string">"Вася"</code> <code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token comment">// Объявляем в нашем скрипте свойство "id"</code>
+user<code class="token punctuation">.</code>id <code class="token operator">=</code> <code class="token string">"Наш идентификатор"</code><code class="token punctuation">;</code>
+
+<code class="token comment">// ...другой скрипт тоже хочет свой идентификатор...</code>
+
+user<code class="token punctuation">.</code>id <code class="token operator">=</code> <code class="token string">"Их идентификатор"</code>
+<code class="token comment">// Ой! Свойство перезаписано сторонней библиотекой!</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><h3><a class="main__anchor" name="simvoly-v-literalnom-obekte" href="http://learn.javascript.ru/symbol#simvoly-v-literalnom-obekte">Символы в литеральном объекте</a></h3><p>Если мы хотим использовать символ при литеральном объявлении объекта <code>{...}</code>, его необходимо заключить в квадратные скобки.</p>
+<p>Вот так:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:4}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="4">
+
+
+
+<code class="mask">
+</code></code><code class=" language-javascript"><code class="token keyword">let</code> id <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token keyword">let</code> user <code class="token operator">=</code> <code class="token punctuation">{</code>
+  name<code class="token punctuation">:</code> <code class="token string">"Вася"</code><code class="token punctuation">,</code>
+  <code class="token punctuation">[</code>id<code class="token punctuation">]</code><code class="token punctuation">:</code> <code class="token number">123</code> <code class="token comment">// просто "id: 123" не сработает</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Это вызвано тем, что нам нужно использовать значение переменной <code>id</code> в качестве ключа, а не строку «id».</p>
+<h3><a class="main__anchor" name="simvoly-ignoriruyutsya-tsiklom-for-in" href="http://learn.javascript.ru/symbol#simvoly-ignoriruyutsya-tsiklom-for-in">Символы игнорируются циклом for…in</a></h3><p>Свойства, чьи ключи – символы, не перебираются циклом <code>for..in</code>.</p>
+<p>Например:</p>
+<div data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:7}]" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class="block-highlight" data-start="7">
+
+
+
+
+
+
+<code class="mask">
+</code></code><code class=" language-javascript"><code class="token keyword">let</code> id <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token keyword">let</code> user <code class="token operator">=</code> <code class="token punctuation">{</code>
+  name<code class="token punctuation">:</code> <code class="token string">"Вася"</code><code class="token punctuation">,</code>
+  age<code class="token punctuation">:</code> <code class="token number">30</code><code class="token punctuation">,</code>
+  <code class="token punctuation">[</code>id<code class="token punctuation">]</code><code class="token punctuation">:</code> <code class="token number">123</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> key <code class="token keyword">in</code> user<code class="token punctuation">)</code> <code class="token function">alert</code><code class="token punctuation">(</code>key<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// name, age (свойства с ключом-символом нет среди перечисленных)</code>
+
+<code class="token comment">// хотя прямой доступ по символу работает</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"Напрямую: "</code> <code class="token operator">+</code> user<code class="token punctuation">[</code>id<code class="token punctuation">]</code> <code class="token punctuation">)</code><code class="token punctuation">;</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Это – часть общего принципа «сокрытия символьных свойств». Если другая библиотека или скрипт будут работать с нашим объектом, то при переборе они не получат ненароком наше символьное свойство. <code>Object.keys(user)</code> также игнорирует символы.</p>
+<p>А вот <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/assign">Object.assign</a>, в отличие от цикла <code>for..in</code>, копирует и строковые, и символьные свойства:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">let</code> id <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token keyword">let</code> user <code class="token operator">=</code> <code class="token punctuation">{</code>
+  <code class="token punctuation">[</code>id<code class="token punctuation">]</code><code class="token punctuation">:</code> <code class="token number">123</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token keyword">let</code> clone <code class="token operator">=</code> Object<code class="token punctuation">.</code><code class="token function">assign</code><code class="token punctuation">(</code><code class="token punctuation">{</code><code class="token punctuation">}</code><code class="token punctuation">,</code> user<code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> clone<code class="token punctuation">[</code>id<code class="token punctuation">]</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 123</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Здесь нет никакого парадокса или противоречия. Так и задумано. Идея заключается в том, что, когда мы клонируем или объединяем объекты, мы обычно хотим скопировать <em>все</em> свойства (включая такие свойства с ключами-символами, как, например, <code>id</code> в примере выше).</p>
+<div class="important important_smart">
+            <div class="important__header"><span class="important__type">Ключи других типов принудительно преобразуются к строке</span></div>
+            <div class="important__content"><p>Мы можем использовать только строки и символы в качестве ключей свойств. Все другие типы данных будут автоматически преобразованы к строке.</p>
+<p>Например, число <code>0</code>, будучи использованным как ключ свойства, превратится в строку <code>"0"</code>:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">let</code> obj <code class="token operator">=</code> <code class="token punctuation">{</code>
+  <code class="token number">0</code><code class="token punctuation">:</code> <code class="token string">"Тест"</code> <code class="token comment">// то же самое что и "0": "Тест"</code>
+<code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+<code class="token comment">// обе функции alert выведут одно и то же свойство (число 0 преобразовывается в строку "0")</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> obj<code class="token punctuation">[</code><code class="token string">"0"</code><code class="token punctuation">]</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Тест</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> obj<code class="token punctuation">[</code><code class="token number">0</code><code class="token punctuation">]</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Тест (то же свойство)</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div></div></div>
+<h2><a class="main__anchor" name="globalnye-simvoly" href="http://learn.javascript.ru/symbol#globalnye-simvoly">Глобальные символы</a></h2><p>Итак, как мы видели, обычно все символы уникальны, даже если их имена совпадают. Но иногда мы наоборот хотим, чтобы символы с одинаковыми именами были одной сущностью. Например, разные части нашего приложения хотят получить доступ к символу <code>"id"</code>, подразумевая именно одно и то же свойство.</p>
+<p>Для этого существует <em>глобальный реестр символов</em>. Мы можем создавать в нём символы и обращаться к ним позже, и при каждом обращении нам гарантированно будет возвращаться один и тот же символ.</p>
+<p>Для чтения (или, при отсутствии, создания) символа из реестра используется вызов <code>Symbol.for(key)</code>.</p>
+<p>Он проверяет глобальный реестр и, при наличии в нём символа с именем <code>key</code>, возвращает его, иначе же создаётся новый символ <code>Symbol(key)</code> и записывается в реестр под ключом <code>key</code>.</p>
+<p>Например:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token comment">// читаем символ из глобального реестра и записываем его в переменную</code>
+<code class="token keyword">let</code> id <code class="token operator">=</code> Symbol<code class="token punctuation">.</code><code class="token function">for</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// если символа не существует, он будет создан</code>
+
+<code class="token comment">// читаем его снова в другую переменную (возможно, из другого места кода)</code>
+<code class="token keyword">let</code> idAgain <code class="token operator">=</code> Symbol<code class="token punctuation">.</code><code class="token function">for</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token comment">// проверяем -- это один и тот же символ</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> id <code class="token operator">===</code> idAgain <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Символы, содержащиеся в реестре, называются <em>глобальными символами</em>. Если вам нужен символ, доступный везде в коде – используйте глобальные символы.</p>
+<div class="important important_smart">
+            <div class="important__header"><span class="important__type">Похоже на Ruby</span></div>
+            <div class="important__content"><p>В некоторых языках программирования, например, Ruby, на одно имя (описание) приходится один символ, и не могут существовать разные символы с одинаковым именем.</p>
+<p>В JavaScript, как мы видим, это утверждение верно только для глобальных символов.</p>
+</div></div>
+<h3><a class="main__anchor" name="symbol-keyfor" href="http://learn.javascript.ru/symbol#symbol-keyfor">Symbol.keyFor</a></h3><p>Для глобальных символов, кроме <code>Symbol.for(key)</code>, который ищет символ по имени, существует обратный метод: <code>Symbol.keyFor(sym)</code>, который, наоборот, принимает глобальный символ и возвращает его имя.</p>
+<p>К примеру:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token comment">// получаем символ по имени</code>
+<code class="token keyword">let</code> sym <code class="token operator">=</code> Symbol<code class="token punctuation">.</code><code class="token function">for</code><code class="token punctuation">(</code><code class="token string">"name"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token keyword">let</code> sym2 <code class="token operator">=</code> Symbol<code class="token punctuation">.</code><code class="token function">for</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token comment">// получаем имя по символу</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> Symbol<code class="token punctuation">.</code><code class="token function">keyFor</code><code class="token punctuation">(</code>sym<code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// name</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> Symbol<code class="token punctuation">.</code><code class="token function">keyFor</code><code class="token punctuation">(</code>sym2<code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// id</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><p>Внутри метода <code>Symbol.keyFor</code> используется глобальный реестр символов для нахождения имени символа. Так что этот метод не будет работать для неглобальных символов. Если символ неглобальный, метод не сможет его найти и вернёт <code>undefined</code>.</p>
+<p>Впрочем, для любых символов доступно свойство <code>description</code>.</p>
+<p>Например:</p>
+<div data-trusted="1" class="code-example" data-prism-highlighted="1">
+      <div class="codebox code-example__codebox">
+        
+        <div class="toolbar codebox__toolbar">
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+          </div>
+          <div class="toolbar__tool">
+            <a href="http://learn.javascript.ru/symbol#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+          </div>
+        </div>
+        <div class="codebox__code" data-code="1">
+          <pre class="line-numbers  language-javascript"><code class=" language-javascript"><code class="token keyword">let</code> globalSymbol <code class="token operator">=</code> Symbol<code class="token punctuation">.</code><code class="token function">for</code><code class="token punctuation">(</code><code class="token string">"name"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+<code class="token keyword">let</code> localSymbol <code class="token operator">=</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"name"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> Symbol<code class="token punctuation">.</code><code class="token function">keyFor</code><code class="token punctuation">(</code>globalSymbol<code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// name, глобальный символ</code>
+<code class="token function">alert</code><code class="token punctuation">(</code> Symbol<code class="token punctuation">.</code><code class="token function">keyFor</code><code class="token punctuation">(</code>localSymbol<code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// undefined для неглобального символа</code>
+
+<code class="token function">alert</code><code class="token punctuation">(</code> localSymbol<code class="token punctuation">.</code>description <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// name</code></code><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></pre>
+        </div>
+      </div>
+      
+      </div><h2><a class="main__anchor" name="sistemnye-simvoly" href="http://learn.javascript.ru/symbol#sistemnye-simvoly">Системные символы</a></h2><p>Существует множество «системных» символов, использующихся внутри самого JavaScript, и мы можем использовать их, чтобы настраивать различные аспекты поведения объектов.</p>
+<p>Эти символы перечислены в спецификации в таблице <a href="https://tc39.github.io/ecma262/#sec-well-known-symbols">Well-known symbols</a>:</p>
+<ul>
+<li><code>Symbol.hasInstance</code></li>
+<li><code>Symbol.isConcatSpreadable</code></li>
+<li><code>Symbol.iterator</code></li>
+<li><code>Symbol.toPrimitive</code></li>
+<li>…и так далее.</li>
+</ul>
+<p>В частности, <code>Symbol.toPrimitive</code> позволяет описать правила для объекта, согласно которым он будет преобразовываться к примитиву. Мы скоро увидим его применение.</p>
+<p>С другими системными символами мы тоже скоро познакомимся, когда будем изучать соответствующие возможности языка.</p>
+<h2><a class="main__anchor" name="itogo" href="http://learn.javascript.ru/symbol#itogo">Итого</a></h2><p>Символ (symbol) – примитивный тип данных, использующийся для создания уникальных идентификаторов.</p>
+<p>Символы создаются вызовом функции <code>Symbol()</code>, в которую можно передать описание (имя) символа.</p>
+<p>Даже если символы имеют одно и то же имя, это – разные символы. Если мы хотим, чтобы одноимённые символы были равны, то следует использовать глобальный реестр: вызов <code>Symbol.for(key)</code> возвращает (или создаёт) глобальный символ с <code>key</code> в качестве имени. Многократные вызовы команды <code>Symbol.for</code> с одним и тем же аргументом возвращают один и тот же символ.</p>
+<p>Символы имеют два основных варианта использования:</p>
+<ol>
+<li>
+<p>«Скрытые» свойства объектов.
+Если мы хотим добавить свойство в объект, который «принадлежит» другому скрипту или библиотеке, мы можем создать символ и использовать его в качестве ключа. Символьное свойство не появится в <code>for..in</code>, так что оно не будет нечаянно обработано вместе с другими. Также оно не будет модифицировано прямым обращением, так как другой скрипт не знает о нашем символе. Таким образом, свойство будет защищено от случайной перезаписи или использования.</p>
+<p>Так что, используя символьные свойства, мы можем спрятать что-то нужное нам, но что другие видеть не должны.</p>
+</li>
+<li>
+<p>Существует множество системных символов, используемых внутри JavaScript, доступных как <code>Symbol.*</code>. Мы можем использовать их, чтобы изменять встроенное поведение ряда объектов. Например, в дальнейших главах мы будем использовать <code>Symbol.iterator</code> для <a href="http://learn.javascript.ru/iterable">итераторов</a>, <code>Symbol.toPrimitive</code> для настройки <a href="http://learn.javascript.ru/object-toprimitive">преобразования объектов в примитивы</a> и так далее.</p>
+</li>
+</ol>
+<p>Технически символы скрыты не на 100%. Существует встроенный метод <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Object/getOwnPropertySymbols">Object.getOwnPropertySymbols(obj)</a>  – с его помощью можно получить все свойства объекта с ключами-символами. Также существует метод <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Global_Objects/Reflect/ownKeys">Reflect.ownKeys(obj)</a>, который возвращает <em>все</em> ключи объекта, включая символьные. Так что они не совсем спрятаны. Но большинство библиотек, встроенных методов и синтаксических конструкций не используют эти методы.</p>
+</div></article></div><div class="page__nav-wrap"><a class="page__nav page__nav_prev" href="http://learn.javascript.ru/garbage-collection" data-tooltip="Сборка мусора"><span class="page__nav-text"><span class="page__nav-text-shortcut">Ctrl + <span class="page__nav-text-arr">←</span></span></span><span class="page__nav-text-alternate">Предыдущий урок</span></a><a class="page__nav page__nav_next" href="http://learn.javascript.ru/object-methods" data-tooltip="Методы объекта, &quot;this&quot;"><span class="page__nav-text"><span class="page__nav-text-shortcut">Ctrl + <span class="page__nav-text-arr">→</span></span></span><span class="page__nav-text-alternate">Следующий урок</span></a></div><div class="article-tablet-foot tablet-only"><div class="article-tablet-foot__layout"><div class="share-icons"><span class="share-icons__title">Поделиться</span><a class="share share_tw" href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fsymbol" rel="nofollow"></a><a class="share share_fb" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p%5Burl%5D=https%3A%2F%2Flearn.javascript.ru%2Fsymbol" rel="nofollow"></a><a class="share share_vk" href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fsymbol" rel="nofollow"></a></div><div class="article-tablet-foot__map"><a class="map" href="http://learn.javascript.ru/tutorial/map" data-action="tutorial-map"><span class="map__text">Карта учебника</span></a></div></div></div><div class="banner-bottom" style="display: flex;"><div class="banner-bottom__text">Проводим <a href="http://learn.javascript.ru/courses">курсы по JavaScript и фреймворкам</a>.</div><button class="banner-bottom__close" data-banner-close="Courses" data-banner-close-message="Эта информация больше не будет выводиться." title="не показывать"></button></div><script>!!1&&"hideBannerCourses"in localStorage||(document.querySelector(".banner-bottom").style.display="flex");</script><div class="comments formatted" id="comments"><div class="comments__header"><h2 class="comments__header-title"><a href="http://learn.javascript.ru/symbol#comments" name="comments">Комментарии</a></h2><div class="comments__read-before"><span class="comments__read-before-link">перед тем как писать…</span><div class="comments__read-before-popup"><div class="comments__read-before-popup-i"><ul><li>Если вам кажется, что в статье что-то не так - вместо комментария напишите <a href="https://github.com/javascript-tutorial/ru.javascript.info/issues/new">на GitHub</a>.</li><li>Для одной строки кода используйте тег <code>&lt;code&gt;</code>, для нескольких строк кода&nbsp;— тег <code>&lt;pre&gt;</code>, если больше 10 строк&nbsp;— ссылку на песочницу (<a href="https://plnkr.co/edit/?p=preview">plnkr</a>, <a href="http://jsbin.com/">JSBin</a>, <a href="http://codepen.io/">codepen</a>…)</li><li>Если что-то непонятно в статье&nbsp;— пишите, что именно и с какого места.</li></ul></div></div></div></div><div id="disqus_thread"></div><script>var disqus_config = function() { if (!this.page) this.page = {}; Object.assign(this.page, {"url":"https:\/\/learn.javascript.ru\/symbol","identifier":"\/symbol"}); };</script><script>var disqus_shortname = "learnjavascriptru";</script><script>var disqus_enabled = true;</script></div></main></div><div class="sidebar page__sidebar sidebar sidebar_sticky-footer" style="top: 0px;"><button class="sidebar__toggle" data-sidebar-toggle=""></button><a class="map" href="http://learn.javascript.ru/tutorial/map" data-action="tutorial-map" data-tooltip="Карта учебника"></a><div class="sidebar__inner"><div class="sidebar__content"><div class="sidebar__section"><h4 class="sidebar__section-title">Раздел</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="http://learn.javascript.ru/object-basics">Объекты: основы</a></li></ul></nav></div><div class="sidebar__section"><h4 class="sidebar__section-title">Навигация по уроку</h4><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link sidebar__navigation-link_active" href="http://learn.javascript.ru/symbol#simvoly">Символы</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="http://learn.javascript.ru/symbol#skrytye-svoystva">«Скрытые» свойства</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="http://learn.javascript.ru/symbol#globalnye-simvoly">Глобальные символы</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="http://learn.javascript.ru/symbol#sistemnye-simvoly">Системные символы</a></li><li class="sidebar__navigation-link"><a class="sidebar__link" href="http://learn.javascript.ru/symbol#itogo">Итого</a></li></ul></nav></div><div class="sidebar__section"><nav class="sidebar__navigation"><ul class="sidebar__navigation-links"><li class="sidebar__navigation-link"><a class="sidebar__link" href="http://learn.javascript.ru/symbol#comments">Комментарии</a></li></ul></nav></div><div class="sidebar__section"><div class="sidebar__section-title">Поделиться</div><a class="share share_tw sidebar__share" href="https://twitter.com/share?url=https%3A%2F%2Flearn.javascript.ru%2Fsymbol" rel="nofollow"></a><a class="share share_fb sidebar__share" href="https://www.facebook.com/sharer/sharer.php?s=100&amp;p[url]=https%3A%2F%2Flearn.javascript.ru%2Fsymbol" rel="nofollow"></a><a class="share share_vk sidebar__share" href="https://vkontakte.ru/share.php?url=https%3A%2F%2Flearn.javascript.ru%2Fsymbol" rel="nofollow"></a></div><div class="sidebar__section"><a class="sidebar__link" href="https://github.com/javascript-tutorial/ru.javascript.info/blob/master/1-js/04-object-basics/03-symbol" rel="nofollow">Редактировать на GitHub</a></div></div></div></div></div></div><div class="page-footer"><ul class="page-footer__list"><li class="page-footer__item page-footer__item_copy">©&nbsp;2007—2019&nbsp; Илья Кантор</li><li class="page-footer__item page-footer__item_about"><a class="page-footer__link" href="http://learn.javascript.ru/about">о проекте</a></li><li class="page-footer__item page-footer__item_contact"><a class="page-footer__link" href="http://learn.javascript.ru/about#contact-us">связаться с нами</a></li><li class="page-footer__item page-footer__item_terms"><a class="page-footer__link" href="http://learn.javascript.ru/terms">пользовательское соглашение</a></li><li class="page-footer__item page-footer__item_privacy"><a class="page-footer__link" href="http://learn.javascript.ru/privacy">политика конфиденциальности</a></li><li class="page-footer__item page-footer__item_slack"><a class="page-footer__slack" href="http://slack.javascript.ru/">slack-чат</a></li></ul></div><progress class="tutorial-progress sticky" data-sticky="" value="29" max="87" data-tooltip="Урок 29 из 87" style="position: fixed; top: 0px; left: 0px; z-index: 101; background: white; margin: 0px; width: 1040px;"></progress></body></html>
